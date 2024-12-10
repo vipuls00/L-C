@@ -12,23 +12,23 @@ adjacent_countries = {
     "RU": ["Norway", "Finland", "Estonia", "Latvia", "Lithuania", "Poland", "Belarus", "Ukraine", "Georgia", "Azerbaijan", "Kazakhstan", "China", "Mongolia", "North Korea"]
 }
 
-def get_adjacent_countries(country_code):
+def get_neighboring_countries(country_code):
     country_code = country_code.upper()
     if country_code in adjacent_countries:
         return adjacent_countries[country_code]
     else:
-        return "Invalid country code or no adjacent country data available."
+        return "Invalid country code or no neighboring country data available."
 
 def main():
     country_code = input("Enter a country code (e.g., IN, US, NZ): ").upper()
     
     if len(country_code) == 2:
-        adjacent = get_adjacent_countries(country_code)
+        neighboring_countries = get_neighboring_countries(country_code)
         print(f"Country Code: {country_code}")
-        if isinstance(adjacent, list):
-            print(f"Adjacent countries: {', '.join(adjacent)}")
+        if isinstance(neighboring_countries, list):
+            print(f"Neighboring countries: {', '.join(neighboring_countries)}")
         else:
-            print(adjacent)
+            print(neighboring_countries)
     else:
         print("Please enter a valid 2-letter country code.")
 
