@@ -1,0 +1,14 @@
+[
+    {
+        "CustomerID": 1,
+        "CompanyName": "Company A",
+        "ContactName": "Alice",
+        "Country": "USA"
+    },
+    {
+        "CustomerID": 3,
+        "CompanyName": "Company C",
+        "ContactName": "Charlie",
+        "Country": "USA"
+    }
+]
