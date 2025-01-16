@@ -1,7 +1,6 @@
 import csv
 import json
 
-# Customer class: Represents a customer entity.
 class Customer:
     def __init__(self, customer_id, company_name, contact_name, country):
         self.customer_id = customer_id
@@ -17,7 +16,6 @@ class Customer:
             "Country": self.country
         }
 
-# CustomerSearch class: Handles searching for customers in a database.
 class CustomerSearch:
     def __init__(self, db):
         self.db = db
@@ -44,7 +42,6 @@ class CustomerSearch:
         ]
 
 
-# CustomerReport class: Handles generating reports in CSV and JSON formats.
 class CustomerReport:
     @staticmethod
     def export_to_csv(data, file_path):
@@ -65,9 +62,7 @@ class CustomerReport:
         print(f"Data exported to {file_path}")
 
 
-# Usage Example
 if __name__ == "__main__":
-    # Mock database
     database = [
         Customer(1, "Company A", "Alice", "USA"),
         Customer(2, "Company B", "Bob", "Canada"),
@@ -75,16 +70,12 @@ if __name__ == "__main__":
         Customer(4, "Company D", "David", "UK"),
     ]
 
-    # Initialize CustomerSearch with the database
     search = CustomerSearch(database)
 
-    # Search by country
     results = search.search_by_country("USA")
     print(f"Found {len(results)} customers in the USA.")
 
-    # Export results to CSV
     report = CustomerReport()
     report.export_to_csv(results, "customers_in_usa.csv")
 
-    # Export results to JSON
     report.export_to_json(results, "customers_in_usa.json")
