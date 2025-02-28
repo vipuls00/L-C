@@ -22,7 +22,7 @@ class Blog:
         for attempt in range(5):
             try:
                 response = requests.get(url, params=params)
-                response.raise_for_status()  # Raises an HTTPError for bad responses (4xx and 5xx)
+                response.raise_for_status() 
                 return response  
             except requests.exceptions.RequestException as e:
                 if attempt == 4:  
